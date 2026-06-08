@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekcja 4: Znaczniki, formatowanie i informacje o stronie</title>
+  <style>
+        .back-main{
+        padding: 5px;
+        border: 2px solid #1a5fb4;
+        border-radius: 6px;
+        background-color: #1a3f72;
+        color: white;
+    }
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #333;
+}
+body {
+  padding: 0;
+}
+a {
+  color: #1a5fb4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page-wrapper {
+  display: flex;
+  min-height: 100%;
+}
+.sidebar {
+  width: 240px;
+  background: #e8eef7;
+  padding: 22px 16px;
+  border-right: 1px solid #d1d8e6;
+}
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #1a5fb4;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.sidebar nav li {
+  margin-bottom: 8px;
+}
+.sidebar nav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #333;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: #d7e5fa;
+}
+.main {
+  flex: 1;
+  padding: 26px;
+}
+.main h1 {
+  margin-top: 0;
+  font-size: 30px;
+  color: #1a3f72;
+}
+.section-block {
+  background: #fff;
+  border: 1px solid #d6dce5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.section-block h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #1a5fb4;
+}
+.section-block p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+.example-box {
+  background: #f8fbff;
+  border: 1px solid #d2dff0;
+  border-radius: 6px;
+  padding: 14px;
+}
+.code-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #1a5fb4;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+input.toggle-code {
+  display: none;
+}
+.code-block {
+  display: none;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+input.toggle-code:checked + label + .code-block {
+  display: block;
+}
+.code-block pre {
+  margin: 0;
+  background: #eef3fa;
+  padding: 14px;
+  border-radius: 6px;
+}
+.code-block code {
+  font-family: Consolas, Monaco, monospace;
+  color: #1a3f72;
+  white-space: pre-wrap;
+}
+@media (max-width: 860px) {
+  .page-wrapper {
+    display: block;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #d1d8e6;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <aside class="sidebar">
+      <h2>Spis lekcji</h2>
+      <nav>
+        <ul>
+          <li><a href="lekcja1.html">Lekcja 1</a></li>
+          <li><a href="lekcja2.html">Lekcja 2</a></li>
+          <li><a href="lekcja3.html">Lekcja 3</a></li>
+          <li><a href="lekcja4.html" class="active">Lekcja 4</a></li>
+          <li><a href="lekcja5.html">Lekcja 5</a></li>
+          <li><a href="lekcja6.html">Lekcja 6</a></li>
+          <li><a href="lekcja7.html">Lekcja 7</a></li>
+          <li><a href="lekcja8.html">Lekcja 8</a></li>
+          <li><a href="lekcja9.html">Lekcja 9</a></li>
+          <li><a href="lekcja10.html">Lekcja 10</a></li>
+          <li><a href="lekcja11.html">Lekcja 11</a></li>
+          <li><a href="lekcja12.html">Lekcja 12</a></li>
+          <li><a href="lekcja13.html">Lekcja 13</a></li>
+          <li><a href="lekcja14.html">Lekcja 14</a></li>
+          <li><a href="lekcja15.html">Lekcja 15</a></li>
+          <li><a href="lekcja16.html">Lekcja 16</a></li>
+          <li><a href="lekcja17.html">Lekcja 17</a></li>
+          <li><a href="lekcja18.html">Lekcja 18</a></li>
+          <li><a href="lekcja19.html">Lekcja 19</a></li>
+          <li><a href="lekcja20.html">Lekcja 20</a></li>
+          <li><a href="lekcja21.html">Lekcja 21</a></li>
+          <li><a href="lekcja22.html">Lekcja 22</a></li>
+          <li><a href="lekcja23.html">Lekcja 23</a></li>
+          <li><a href="lekcja24.html">Lekcja 24</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main">
+      <h1>Lekcja 4: Meta i formatowanie tekstu</h1>
+      <a href="index.html" class="back-main">Wróć na główną!</a>
+      <section class="section-block">
+        <h2>Teoria</h2>
+        <p>W HTML istnieją znaczniki służące do formatowania tekstu oraz opisywania jego znaczenia. Pozwalają one wyróżniać fragmenty treści, dodawać cytaty, kod lub informacje dodatkowe bez zmiany struktury strony.</p>
+
+<p>Znacznik &lt;b&gt; służy do pogrubienia tekstu wizualnie, bez nadawania mu dodatkowego znaczenia semantycznego. Znacznik &lt;strong&gt; również pogrubia tekst, ale dodatkowo oznacza go jako ważny.</p>
+
+<p>Znacznik &lt;i&gt; zapisuje tekst kursywą, natomiast &lt;em&gt; podkreśla jego znaczenie i również wyświetla go kursywą.</p>
+
+<p>Znaczniki &lt;ins&gt; i &lt;del&gt; służą do oznaczania zmian w tekście. &lt;ins&gt; oznacza tekst dodany, a &lt;del&gt; tekst usunięty.</p>
+
+<p>Znaczniki &lt;sup&gt; i &lt;sub&gt; służą do tworzenia indeksów. &lt;sup&gt; tworzy indeks górny, a &lt;sub&gt; indeks dolny, np. w matematyce lub chemii.</p>
+
+<p>Znacznik &lt;span&gt; jest elementem liniowym używanym do stylowania fragmentów tekstu bez wpływu na strukturę dokumentu.</p>
+
+<p>Znacznik &lt;pre&gt; zachowuje oryginalne formatowanie tekstu, takie jak spacje i nowe linie, natomiast &lt;code&gt; służy do oznaczania fragmentów kodu komputerowego.</p>
+
+<p>Znacznik &lt;cite&gt; oznacza tytuł dzieła lub źródło cytatu, a &lt;q&gt; służy do krótkich cytatów w tekście.</p>
+
+<p>Meta znaczniki znajdują się w sekcji &lt;head&gt; i służą do opisu strony internetowej. Nie są widoczne dla użytkownika, ale są ważne dla przeglądarek i wyszukiwarek.</p>
+
+<p>Najważniejsze meta znaczniki to:</p>
+
+<p>&lt;meta charset="UTF-8"&gt; – określa kodowanie znaków, które pozwala poprawnie wyświetlać polskie znaki.</p>
+
+<p>&lt;meta name="description" content="opis strony"&gt; – zawiera opis strony widoczny w wynikach wyszukiwania.</p>
+
+<p>&lt;meta name="keywords" content="słowa, kluczowe"&gt; – zawiera słowa kluczowe opisujące stronę.</p>
+
+<p>&lt;meta name="author" content="autor strony"&gt; – określa autora dokumentu.</p>
+
+<p>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; – odpowiada za poprawne wyświetlanie strony na urządzeniach mobilnych.</p>
+<section class="section-block">
+  <h2>Przykład</h2>
+
+  <div class="example-box">
+    <p>To jest <strong>bardzo ważny</strong> tekst, a to <em>wyróżniony fragment</em>.</p>
+
+    <p>To jest <b>pogrubienie bez znaczenia</b> i <i>kursywa wizualna</i>.</p>
+
+    <p>H<sub>2</sub>O oraz x<sup>2</sup> = 25</p>
+
+    <p><ins>Tekst dodany</ins> i <del>tekst usunięty</del></p>
+
+    <p><span style="color:#1a5fb4;">Fragment stylizowany przez span</span></p>
+
+    <p>To jest cytat: <q>HTML jest prosty do nauki</q></p>
+
+    <p>Źródło: <cite>Kurs HTML i CSS</cite></p>
+
+    <pre>Linia 1
+Linia 2
+    zachowane formatowanie</pre>
+
+    <p>Przykład kodu: <code>&lt;p&gt;Hello World&lt;/p&gt;</code></p>
+  </div>
+</section>
+ <section class="section-block">
+  <input class="toggle-code" type="checkbox" id="show-code-4">
+  <label class="code-toggle" for="show-code-4">Pokaż kod</label>
+
+  <div class="code-block">
+    <pre><code>&lt;!-- FORMATOWANIE TEKSTU --&gt;
+
+&lt;p&gt;To jest &lt;strong&gt;bardzo ważny&lt;/strong&gt; tekst i &lt;em&gt;wyróżniony fragment&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;To jest &lt;b&gt;pogrubienie bez znaczenia&lt;/b&gt; i &lt;i&gt;kursywa wizualna&lt;/i&gt;.&lt;/p&gt;
+
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O oraz x&lt;sup&gt;2&lt;/sup&gt; = 25&lt;/p&gt;
+
+&lt;p&gt;&lt;ins&gt;Tekst dodany&lt;/ins&gt; i &lt;del&gt;tekst usunięty&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:#1a5fb4;&quot;&gt;Fragment stylizowany przez span&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;To jest cytat: &lt;q&gt;HTML jest prosty do nauki&lt;/q&gt;&lt;/p&gt;
+
+&lt;p&gt;Źródło: &lt;cite&gt;Kurs HTML i CSS&lt;/cite&gt;&lt;/p&gt;
+
+&lt;pre&gt;Linia 1
+Linia 2
+zachowane formatowanie&lt;/pre&gt;
+
+&lt;p&gt;Przykład kodu: &lt;code&gt;&amp;lt;p&amp;gt;Hello World&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;</code></pre>
+  </div>
+</section>
+    </main>
+  </div>
+</body>
+</html>

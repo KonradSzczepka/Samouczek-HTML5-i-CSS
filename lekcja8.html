@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekcja 8: id i class</title>
+  <style>
+        .back-main{
+        padding: 5px;
+        border: 2px solid #1a5fb4;
+        border-radius: 6px;
+        background-color: #1a3f72;
+        color: white;
+    }
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #333;
+}
+body {
+  padding: 0;
+}
+a {
+  color: #1a5fb4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page-wrapper {
+  display: flex;
+  min-height: 100%;
+}
+.sidebar {
+  width: 240px;
+  background: #e8eef7;
+  padding: 22px 16px;
+  border-right: 1px solid #d1d8e6;
+}
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #1a5fb4;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.sidebar nav li {
+  margin-bottom: 8px;
+}
+.sidebar nav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #333;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: #d7e5fa;
+}
+.main {
+  flex: 1;
+  padding: 26px;
+}
+.main h1 {
+  margin-top: 0;
+  font-size: 30px;
+  color: #1a3f72;
+}
+.section-block {
+  background: #fff;
+  border: 1px solid #d6dce5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.section-block h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #1a5fb4;
+}
+.section-block p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+.example-box {
+  background: #f8fbff;
+  border: 1px solid #d2dff0;
+  border-radius: 6px;
+  padding: 14px;
+}
+.code-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #1a5fb4;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+input.toggle-code {
+  display: none;
+}
+.code-block {
+  display: none;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+input.toggle-code:checked + label + .code-block {
+  display: block;
+}
+.code-block pre {
+  margin: 0;
+  background: #eef3fa;
+  padding: 14px;
+  border-radius: 6px;
+}
+.code-block code {
+  font-family: Consolas, Monaco, monospace;
+  color: #1a3f72;
+  white-space: pre-wrap;
+}
+@media (max-width: 860px) {
+  .page-wrapper {
+    display: block;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #d1d8e6;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <aside class="sidebar">
+      <h2>Spis lekcji</h2>
+      <nav>
+        <ul>
+          <li><a href="lekcja1.html">Lekcja 1</a></li>
+          <li><a href="lekcja2.html">Lekcja 2</a></li>
+          <li><a href="lekcja3.html">Lekcja 3</a></li>
+          <li><a href="lekcja4.html">Lekcja 4</a></li>
+          <li><a href="lekcja5.html">Lekcja 5</a></li>
+          <li><a href="lekcja6.html">Lekcja 6</a></li>
+          <li><a href="lekcja7.html">Lekcja 7</a></li>
+          <li><a href="lekcja8.html" class="active">Lekcja 8</a></li>
+          <li><a href="lekcja9.html">Lekcja 9</a></li>
+          <li><a href="lekcja10.html">Lekcja 10</a></li>
+          <li><a href="lekcja11.html">Lekcja 11</a></li>
+          <li><a href="lekcja12.html">Lekcja 12</a></li>
+          <li><a href="lekcja13.html">Lekcja 13</a></li>
+          <li><a href="lekcja14.html">Lekcja 14</a></li>
+          <li><a href="lekcja15.html">Lekcja 15</a></li>
+          <li><a href="lekcja16.html">Lekcja 16</a></li>
+          <li><a href="lekcja17.html">Lekcja 17</a></li>
+          <li><a href="lekcja18.html">Lekcja 18</a></li>
+          <li><a href="lekcja19.html">Lekcja 19</a></li>
+          <li><a href="lekcja20.html">Lekcja 20</a></li>
+          <li><a href="lekcja21.html">Lekcja 21</a></li>
+          <li><a href="lekcja22.html">Lekcja 22</a></li>
+          <li><a href="lekcja23.html">Lekcja 23</a></li>
+          <li><a href="lekcja24.html">Lekcja 24</a></li>
+          <li><a href="lekcja25.html">Lekcja 25</a></li>
+          <li><a href="lekcja26.html">Lekcja 26</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main">
+      <h1>Lekcja 8: id i class</h1>
+            <a href="index.html" class="back-main">Wróć na główną!</a>
+
+      <section class="section-block">
+        <h2>Teoria</h2>
+<p>Atrybuty &lt;id&gt; i &lt;class&gt; służą do identyfikowania elementów HTML, aby można było je stylować w CSS lub używać w JavaScript.</p>
+
+<p>Atrybut &lt;id&gt; jest unikalny, co oznacza, że może wystąpić tylko raz na jednej stronie. Służy do identyfikowania pojedynczego elementu, np. konkretnego nagłówka lub sekcji.</p>
+
+<p>Atrybut &lt;class&gt; może być używany wielokrotnie i służy do grupowania elementów o wspólnym stylu. Dzięki temu można nadać jeden styl wielu elementom jednocześnie.</p>
+
+<p>W CSS id zapisuje się za pomocą znaku #, np. #naglowek, a class za pomocą kropki, np. .przycisk.</p>
+
+<p>Id stosuje się wtedy, gdy element jest unikalny, natomiast class wtedy, gdy wiele elementów ma wyglądać tak samo.</p></section>
+<section class="section-block">
+  <h2>Przykład</h2>
+
+  <style>
+    #tytul {
+      color: #1a5fb4;
+      text-align: center;
+    }
+
+    .tekst {
+      color: #ff0000;
+      font-size: 16px;
+    }
+    .tekst2{
+      color: green;
+      font-size: 30px;
+    }
+
+    .przycisk {
+      background: #1a5fb4;
+      color: white;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .przycisk:hover {
+      background: #15467e;
+    }
+  </style>
+
+  <div class="example-box">
+
+    <h2 id="tytul">To jest nagłówek z ID</h2>
+
+    <p class="tekst">Ten akapit należy do klasy "tekst".</p>
+
+    <p class="tekst">Ten też należy do tej samej klasy.</p>
+    <p class="tekst2">Ten też należy do innej klasy.</p>
+
+    <button class="przycisk">Kliknij mnie</button>
+  </div>
+</section>
+ <section class="section-block">
+  <input class="toggle-code" type="checkbox" id="show-code-8">
+  <label class="code-toggle" for="show-code-8">Pokaż kod</label>
+
+  <div class="code-block">
+    <pre><code>&lt;!-- ID + CSS --&gt;
+&lt;h2 id=&quot;tytul&quot;&gt;To jest nagłówek z ID&lt;/h2&gt;
+
+&lt;!-- CLASS + CSS --&gt;
+&lt;p class=&quot;tekst&quot;&gt;Ten akapit należy do klasy "tekst".&lt;/p&gt;
+&lt;p class=&quot;tekst&quot;&gt;Ten też należy do tej samej klasy.&lt;/p&gt;
+&lt;p class=&quot;tekst2&quot;&gt;Ten też należy do innej klasy.&lt;/p&gt;
+
+
+&lt;button class=&quot;przycisk&quot;&gt;Kliknij mnie&lt;/button&gt;
+
+&lt;!-- CSS --&gt;
+&lt;style&gt;
+#tytul {
+  color: #1a5fb4;
+  text-align: center;
+}
+
+.tekst {
+  color: red;
+  font-size: 16px;
+}
+.tekst2{
+      color: green;
+      font-size: 30px;
+    }
+
+.przycisk {
+  background: #1a5fb4;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+}
+
+.przycisk:hover {
+  background: #15467e;
+}
+&lt;/style&gt;</code></pre>
+  </div>
+</section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekcja 10: Selektory CSS</title>
+  <style>
+        .back-main{
+        padding: 5px;
+        border: 2px solid #1a5fb4;
+        border-radius: 6px;
+        background-color: #1a3f72;
+        color: white;
+    }
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #333;
+}
+body {
+  padding: 0;
+}
+a {
+  color: #1a5fb4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page-wrapper {
+  display: flex;
+  min-height: 100%;
+}
+.sidebar {
+  width: 240px;
+  background: #e8eef7;
+  padding: 22px 16px;
+  border-right: 1px solid #d1d8e6;
+}
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #1a5fb4;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.sidebar nav li {
+  margin-bottom: 8px;
+}
+.sidebar nav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #333;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: #d7e5fa;
+}
+.main {
+  flex: 1;
+  padding: 26px;
+}
+.main h1 {
+  margin-top: 0;
+  font-size: 30px;
+  color: #1a3f72;
+}
+.section-block {
+  background: #fff;
+  border: 1px solid #d6dce5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.section-block h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #1a5fb4;
+}
+.section-block p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+.example-box {
+  background: #f8fbff;
+  border: 1px solid #d2dff0;
+  border-radius: 6px;
+  padding: 14px;
+}
+.code-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #1a5fb4;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+input.toggle-code {
+  display: none;
+}
+.code-block {
+  display: none;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+input.toggle-code:checked + label + .code-block {
+  display: block;
+}
+.code-block pre {
+  margin: 0;
+  background: #eef3fa;
+  padding: 14px;
+  border-radius: 6px;
+}
+.code-block code {
+  font-family: Consolas, Monaco, monospace;
+  color: #1a3f72;
+  white-space: pre-wrap;
+}
+@media (max-width: 860px) {
+  .page-wrapper {
+    display: block;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #d1d8e6;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <aside class="sidebar">
+      <h2>Spis lekcji</h2>
+      <nav>
+        <ul>
+          <li><a href="lekcja1.html">Lekcja 1</a></li>
+          <li><a href="lekcja2.html">Lekcja 2</a></li>
+          <li><a href="lekcja3.html">Lekcja 3</a></li>
+          <li><a href="lekcja4.html">Lekcja 4</a></li>
+          <li><a href="lekcja5.html">Lekcja 5</a></li>
+          <li><a href="lekcja6.html">Lekcja 6</a></li>
+          <li><a href="lekcja7.html">Lekcja 7</a></li>
+          <li><a href="lekcja8.html">Lekcja 8</a></li>
+          <li><a href="lekcja9.html">Lekcja 9</a></li>
+          <li><a href="lekcja10.html" class="active">Lekcja 10</a></li>
+          <li><a href="lekcja11.html">Lekcja 11</a></li>
+          <li><a href="lekcja12.html">Lekcja 12</a></li>
+          <li><a href="lekcja13.html">Lekcja 13</a></li>
+          <li><a href="lekcja14.html">Lekcja 14</a></li>
+          <li><a href="lekcja15.html">Lekcja 15</a></li>
+          <li><a href="lekcja16.html">Lekcja 16</a></li>
+          <li><a href="lekcja17.html">Lekcja 17</a></li>
+          <li><a href="lekcja18.html">Lekcja 18</a></li>
+          <li><a href="lekcja19.html">Lekcja 19</a></li>
+          <li><a href="lekcja20.html">Lekcja 20</a></li>
+          <li><a href="lekcja21.html">Lekcja 21</a></li>
+          <li><a href="lekcja22.html">Lekcja 22</a></li>
+          <li><a href="lekcja23.html">Lekcja 23</a></li>
+          <li><a href="lekcja24.html">Lekcja 24</a></li>
+          <li><a href="lekcja25.html">Lekcja 25</a></li>
+          <li><a href="lekcja26.html">Lekcja 26</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main">
+      <h1>Lekcja 10: Selektory CSS</h1>
+            <a href="index.html" class="back-main">Wróć na główną!</a>
+
+<section class="section-block">
+        <h2>Teoria</h2>
+<p>Selektory CSS służą do wskazywania elementów HTML, które mają zostać ostylowane. Dzięki selektorom możemy decydować, do których części strony zostaną zastosowane konkretne style.</p>
+
+<p>Najprostszym selektorem jest selektor znacznika, który odnosi się do wszystkich elementów danego typu, np. p, h1 czy div. Oznacza to, że wszystkie takie elementy na stronie otrzymają ten sam styl.</p>
+
+<p>Selektor klasy (class) pozwala stylować wiele różnych elementów, które mają przypisaną tę samą klasę. W CSS zapisuje się go za pomocą kropki, np. .przycisk.</p>
+
+<p>Selektor identyfikatora (id) służy do stylowania jednego, konkretnego elementu. W CSS zapisuje się go za pomocą znaku #, np. #naglowek. Id powinno być unikalne na stronie.</p>
+
+<p>Można również łączyć selektory, aby precyzyjniej określić elementy, np. div p oznacza wszystkie paragrafy znajdujące się wewnątrz elementu div.</p>
+
+<p>Istnieją także selektory grupowe, które pozwalają przypisać te same style do wielu elementów jednocześnie, np. h1, h2, p { ... }.</p>
+
+<p>Selektory są podstawą CSS, ponieważ bez nich nie da się określić, które elementy mają być stylizowane.</p></section>
+ <section class="section-block">
+  <h2>Przykład</h2>
+
+  <style>
+    .sel-demo p {
+      color: #444;
+    }
+
+    .sel-demo .tekst {
+      color: green;
+      font-weight: bold;
+    }
+
+    .sel-demo #naglowek {
+      color: blue;
+      text-align: center;
+    }
+
+    .sel-demo h1,
+    .sel-demo h2 {
+      text-decoration: underline;
+    }
+
+    .sel-demo div p {
+      font-style: italic;
+      background: #f0f6ff;
+      padding: 4px;
+    }
+  </style>
+
+  <div class="example-box sel-demo">
+    <h1>Strona testowa CSS</h1>
+
+    <h2 id="naglowek">Nagłówek z ID</h2>
+
+    <p>Zwykły paragraf</p>
+
+    <p class="tekst">Paragraf z klasą</p>
+
+    <p class="tekst">Drugi paragraf z klasą</p>
+
+    <div>
+      <p>Paragraf w div (zagnieżdżenie)</p>
+    </div>
+
+    <h2>Drugi nagłówek</h2>
+  </div>
+</section>
+<section class="section-block">
+  <input class="toggle-code" type="checkbox" id="show-code-css5">
+  <label class="code-toggle" for="show-code-css5">Pokaż kod</label>
+
+  <div class="code-block">
+    <pre><code>&lt;!-- HTML --&gt;
+&lt;div class=&quot;sel-demo&quot;&gt;
+
+  &lt;h1&gt;Strona testowa CSS&lt;/h1&gt;
+
+  &lt;h2 id=&quot;naglowek&quot;&gt;Nagłówek z ID&lt;/h2&gt;
+
+  &lt;p&gt;Zwykły paragraf&lt;/p&gt;
+
+  &lt;p class=&quot;tekst&quot;&gt;Paragraf z klasą&lt;/p&gt;
+  &lt;p class=&quot;tekst&quot;&gt;Drugi paragraf z klasą&lt;/p&gt;
+
+  &lt;div&gt;
+    &lt;p&gt;Paragraf w div (zagnieżdżenie)&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;h2&gt;Drugi nagłówek&lt;/h2&gt;
+
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+&lt;style&gt;
+/* selektor znacznika */
+.sel-demo p {
+  color: #444;
+}
+
+/* selektor klasy */
+.sel-demo .tekst {
+  color: green;
+  font-weight: bold;
+}
+
+/* selektor id */
+.sel-demo #naglowek {
+  color: blue;
+  text-align: center;
+}
+
+/* selektor grupowy */
+.sel-demo h1,
+.sel-demo h2 {
+  text-decoration: underline;
+}
+
+/* selektor zagnieżdżony */
+.sel-demo div p {
+  font-style: italic;
+  background: #f0f6ff;
+  padding: 4px;
+}
+&lt;/style&gt;</code></pre>
+  </div>
+</section>
+    </main>
+  </div>
+</body>
+</html>

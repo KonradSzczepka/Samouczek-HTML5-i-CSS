@@ -1,0 +1,148 @@
+/* Prosty styl szkolny dla kursu HTML i CSS */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #333;
+}
+a {
+  color: #1a5fb4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: 240px;
+  background: #e8eef7;
+  padding: 24px 16px;
+  border-right: 1px solid #d1d8e6;
+}
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #1a5fb4;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.sidebar nav li {
+  margin-bottom: 10px;
+}
+.sidebar nav a {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: #333;
+}
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #d7e5fa;
+}
+.main {
+  flex: 1;
+  padding: 32px;
+}
+.main h1 {
+  margin-top: 0;
+  font-size: 32px;
+  color: #1a3f72;
+}
+.section-block {
+  background: #fff;
+  border: 1px solid #d6dce5;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+.section-block h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #1a5fb4;
+}
+.section-block p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+.example-box {
+  background: #f8fbff;
+  border: 1px solid #d2dff0;
+  border-radius: 6px;
+  padding: 16px;
+}
+.code-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: #1a5fb4;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+input.toggle-code {
+  display: none;
+}
+.code-block {
+  display: none;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+input.toggle-code:checked + label + .code-block {
+  display: block;
+}
+.code-block pre {
+  margin: 0;
+  background: #eef3fa;
+  padding: 14px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+.code-block code {
+  font-family: Consolas, Monaco, monospace;
+  color: #1a3f72;
+  white-space: pre-wrap;
+}
+.start-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 24px;
+}
+.start-page h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+.start-button {
+  display: inline-block;
+  padding: 16px 28px;
+  background: #1a5fb4;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.start-button:hover {
+  background: #15467e;
+}
+@media (max-width: 840px) {
+  .page-wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #d1d8e6;
+  }
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekcja 14: Właściwośc display i układ strony</title>
+  <style>
+        .back-main{
+        padding: 5px;
+        border: 2px solid #1a5fb4;
+        border-radius: 6px;
+        background-color: #1a3f72;
+        color: white;
+    }
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #333;
+}
+body {
+  padding: 0;
+}
+a {
+  color: #1a5fb4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page-wrapper {
+  display: flex;
+  min-height: 100%;
+}
+.sidebar {
+  width: 240px;
+  background: #e8eef7;
+  padding: 22px 16px;
+  border-right: 1px solid #d1d8e6;
+}
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #1a5fb4;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.sidebar nav li {
+  margin-bottom: 8px;
+}
+.sidebar nav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #333;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: #d7e5fa;
+}
+.main {
+  flex: 1;
+  padding: 26px;
+}
+.main h1 {
+  margin-top: 0;
+  font-size: 30px;
+  color: #1a3f72;
+}
+.section-block {
+  background: #fff;
+  border: 1px solid #d6dce5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.section-block h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #1a5fb4;
+}
+.section-block p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+.example-box {
+  background: #f8fbff;
+  border: 1px solid #d2dff0;
+  border-radius: 6px;
+  padding: 14px;
+}
+.code-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #1a5fb4;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+input.toggle-code {
+  display: none;
+}
+.code-block {
+  display: none;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+input.toggle-code:checked + label + .code-block {
+  display: block;
+}
+.code-block pre {
+  margin: 0;
+  background: #eef3fa;
+  padding: 14px;
+  border-radius: 6px;
+}
+.code-block code {
+  font-family: Consolas, Monaco, monospace;
+  color: #1a3f72;
+  white-space: pre-wrap;
+}
+@media (max-width: 860px) {
+  .page-wrapper {
+    display: block;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #d1d8e6;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <aside class="sidebar">
+      <h2>Spis lekcji</h2>
+      <nav>
+        <ul>
+          <li><a href="lekcja1.html">Lekcja 1</a></li>
+          <li><a href="lekcja2.html">Lekcja 2</a></li>
+          <li><a href="lekcja3.html">Lekcja 3</a></li>
+          <li><a href="lekcja4.html">Lekcja 4</a></li>
+          <li><a href="lekcja5.html">Lekcja 5</a></li>
+          <li><a href="lekcja6.html">Lekcja 6</a></li>
+          <li><a href="lekcja7.html">Lekcja 7</a></li>
+          <li><a href="lekcja8.html">Lekcja 8</a></li>
+          <li><a href="lekcja9.html">Lekcja 9</a></li>
+          <li><a href="lekcja10.html">Lekcja 10</a></li>
+          <li><a href="lekcja11.html">Lekcja 11</a></li>
+          <li><a href="lekcja12.html">Lekcja 12</a></li>
+          <li><a href="lekcja13.html">Lekcja 13</a></li>
+          <li><a href="lekcja14.html" class="active">Lekcja 14</a></li>
+          <li><a href="lekcja15.html">Lekcja 15</a></li>
+          <li><a href="lekcja16.html">Lekcja 16</a></li>
+          <li><a href="lekcja17.html">Lekcja 17</a></li>
+          <li><a href="lekcja18.html">Lekcja 18</a></li>
+          <li><a href="lekcja19.html">Lekcja 19</a></li>
+          <li><a href="lekcja20.html">Lekcja 20</a></li>
+          <li><a href="lekcja21.html">Lekcja 21</a></li>
+          <li><a href="lekcja22.html">Lekcja 22</a></li>
+          <li><a href="lekcja23.html">Lekcja 23</a></li>
+          <li><a href="lekcja24.html">Lekcja 24</a></li>
+          <li><a href="lekcja25.html">Lekcja 25</a></li>
+          <li><a href="lekcja26.html">Lekcja 26</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main">
+      <h1>Lekcja 14: Display i układ</h1>
+            <a href="index.html" class="back-main">Wróć na główną!</a>
+
+      <section class="section-block">
+        <h2>Teoria</h2>
+<p>Właściwość CSS display określa sposób wyświetlania elementu na stronie oraz to, jak zachowuje się on w układzie strony.</p>
+
+<p>Jednym z najważniejszych typów jest display: block. Elementy blokowe zajmują całą szerokość dostępnego miejsca i zawsze zaczynają się w nowej linii. Przykładami są div, p oraz h1.</p>
+
+<p>Drugim typem jest display: inline. Elementy inline zajmują tylko tyle miejsca, ile potrzebują i nie wymuszają nowej linii. Przykładami są span oraz a.</p>
+
+<p>Istnieje również display: inline-block, który łączy cechy obu poprzednich. Element zachowuje się jak inline (ustawia się obok innych), ale można mu nadać szerokość i wysokość jak block.</p>
+
+<p>W nowoczesnym CSS bardzo ważny jest display: flex. Flexbox pozwala łatwo ustawiać elementy w rzędzie lub kolumnie oraz kontrolować ich wyrównanie, odstępy i rozkład przestrzeni.</p>
+
+<p>Flex działa na zasadzie kontenera i elementów wewnętrznych. Kontener otrzymuje display: flex, a jego dzieci automatycznie stają się elementami flex.</p>
+
+<p>W flexboxie ważne są właściwości takie jak justify-content (wyrównanie w poziomie), align-items (wyrównanie w pionie) oraz gap (odstęp między elementami).</p>
+
+<p>Wcześniej często używano float do układania elementów obok siebie, jednak obecnie jest to rozwiązanie przestarzałe i zastępowane przez flex.</p>
+
+<p>Właściwość display jest jedną z najważniejszych w CSS, ponieważ decyduje o tym, jak elementy układają się na stronie.</p>      </section>
+<section class="section-block">
+  <h2>Przykład</h2>
+
+  <style>
+    /* BLOCK */
+    .block-demo p {
+      display: block;
+      background: #e8f0ff;
+      margin: 5px 0;
+    }
+
+    /* INLINE */
+    .inline-demo span {
+      display: inline;
+      background: #e8ffe8;
+      padding: 4px;
+    }
+
+    /* INLINE-BLOCK */
+    .inline-block-demo div {
+      display: inline-block;
+      width: 120px;
+      height: 60px;
+      background: #fff0e8;
+      margin: 5px;
+      text-align: center;
+      line-height: 60px;
+    }
+
+    /* FLEX */
+    .flex-demo {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      background: #f0e8ff;
+      padding: 10px;
+    }
+
+    .flex-demo div {
+      background: #d9d0ff;
+      padding: 10px;
+      flex: 1;
+      text-align: center;
+    }
+  </style>
+
+  <div class="example-box">
+
+    <h3>✔ BLOCK</h3>
+    <div class="block-demo">
+      <p>Element block 1</p>
+      <p>Element block 2</p>
+    </div>
+
+    <h3>✔ INLINE</h3>
+    <div class="inline-demo">
+      <span>Inline 1</span>
+      <span>Inline 2</span>
+      <span>Inline 3</span>
+    </div>
+
+    <h3>✔ INLINE-BLOCK</h3>
+    <div class="inline-block-demo">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+    </div>
+
+    <h3>✔ FLEX</h3>
+    <div class="flex-demo">
+      <div>Box 1</div>
+      <div>Box 2</div>
+      <div>Box 3</div>
+    </div>
+
+  </div>
+</section>
+<section class="section-block">
+  <input class="toggle-code" type="checkbox" id="show-code-display1">
+  <label class="code-toggle" for="show-code-display1">Pokaż kod</label>
+
+  <div class="code-block">
+    <pre><code>&lt;!-- BLOCK --&gt;
+&lt;p&gt;Element block 1&lt;/p&gt;
+&lt;p&gt;Element block 2&lt;/p&gt;
+
+&lt;!-- INLINE --&gt;
+&lt;span&gt;Inline 1&lt;/span&gt;
+&lt;span&gt;Inline 2&lt;/span&gt;
+&lt;span&gt;Inline 3&lt;/span&gt;
+
+&lt;!-- INLINE-BLOCK --&gt;
+&lt;div&gt;A&lt;/div&gt;
+&lt;div&gt;B&lt;/div&gt;
+&lt;div&gt;C&lt;/div&gt;
+
+&lt;!-- FLEX --&gt;
+&lt;div class=&quot;flex-demo&quot;&gt;
+  &lt;div&gt;Box 1&lt;/div&gt;
+  &lt;div&gt;Box 2&lt;/div&gt;
+  &lt;div&gt;Box 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+/* BLOCK */
+.block-demo p {
+  display: block;
+}
+
+/* INLINE */
+.inline-demo span {
+  display: inline;
+}
+
+/* INLINE-BLOCK */
+.inline-block-demo div {
+  display: inline-block;
+  width: 120px;
+  height: 60px;
+}
+
+/* FLEX */
+.flex-demo {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+&lt;/style&gt;</code></pre>
+  </div>
+</section>
+    </main>
+  </div>
+</body>
+</html>

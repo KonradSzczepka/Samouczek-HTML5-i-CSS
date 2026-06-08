@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekcja 11: Tekst CSS</title>
+  <style>
+        .back-main{
+        padding: 5px;
+        border: 2px solid #1a5fb4;
+        border-radius: 6px;
+        background-color: #1a3f72;
+        color: white;
+    }
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #333;
+}
+body {
+  padding: 0;
+}
+a {
+  color: #1a5fb4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page-wrapper {
+  display: flex;
+  min-height: 100%;
+}
+.sidebar {
+  width: 240px;
+  background: #e8eef7;
+  padding: 22px 16px;
+  border-right: 1px solid #d1d8e6;
+}
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #1a5fb4;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.sidebar nav li {
+  margin-bottom: 8px;
+}
+.sidebar nav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #333;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: #d7e5fa;
+}
+.main {
+  flex: 1;
+  padding: 26px;
+}
+.main h1 {
+  margin-top: 0;
+  font-size: 30px;
+  color: #1a3f72;
+}
+.section-block {
+  background: #fff;
+  border: 1px solid #d6dce5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.section-block h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #1a5fb4;
+}
+.section-block p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+.example-box {
+  background: #f8fbff;
+  border: 1px solid #d2dff0;
+  border-radius: 6px;
+  padding: 14px;
+}
+.code-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #1a5fb4;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+input.toggle-code {
+  display: none;
+}
+.code-block {
+  display: none;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+input.toggle-code:checked + label + .code-block {
+  display: block;
+}
+.code-block pre {
+  margin: 0;
+  background: #eef3fa;
+  padding: 14px;
+  border-radius: 6px;
+}
+.code-block code {
+  font-family: Consolas, Monaco, monospace;
+  color: #1a3f72;
+  white-space: pre-wrap;
+}
+@media (max-width: 860px) {
+  .page-wrapper {
+    display: block;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #d1d8e6;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <aside class="sidebar">
+      <h2>Spis lekcji</h2>
+      <nav>
+        <ul>
+          <li><a href="lekcja1.html">Lekcja 1</a></li>
+          <li><a href="lekcja2.html">Lekcja 2</a></li>
+          <li><a href="lekcja3.html">Lekcja 3</a></li>
+          <li><a href="lekcja4.html">Lekcja 4</a></li>
+          <li><a href="lekcja5.html">Lekcja 5</a></li>
+          <li><a href="lekcja6.html">Lekcja 6</a></li>
+          <li><a href="lekcja7.html">Lekcja 7</a></li>
+          <li><a href="lekcja8.html">Lekcja 8</a></li>
+          <li><a href="lekcja9.html">Lekcja 9</a></li>
+          <li><a href="lekcja10.html">Lekcja 10</a></li>
+          <li><a href="lekcja11.html" class="active">Lekcja 11</a></li>
+          <li><a href="lekcja12.html">Lekcja 12</a></li>
+          <li><a href="lekcja13.html">Lekcja 13</a></li>
+          <li><a href="lekcja14.html">Lekcja 14</a></li>
+          <li><a href="lekcja15.html">Lekcja 15</a></li>
+          <li><a href="lekcja16.html">Lekcja 16</a></li>
+          <li><a href="lekcja17.html">Lekcja 17</a></li>
+          <li><a href="lekcja18.html">Lekcja 18</a></li>
+          <li><a href="lekcja19.html">Lekcja 19</a></li>
+          <li><a href="lekcja20.html">Lekcja 20</a></li>
+          <li><a href="lekcja21.html">Lekcja 21</a></li>
+          <li><a href="lekcja22.html">Lekcja 22</a></li>
+          <li><a href="lekcja23.html">Lekcja 23</a></li>
+          <li><a href="lekcja24.html">Lekcja 24</a></li>
+          <li><a href="lekcja25.html">Lekcja 25</a></li>
+          <li><a href="lekcja26.html">Lekcja 26</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main">
+      <h1>Lekcja 11: Tekst CSS</h1>
+            <a href="index.html" class="back-main">Wróć na główną!</a>
+
+      <section class="section-block">
+        <h2>Teoria</h2>
+<p>CSS pozwala na bardzo szerokie formatowanie tekstu, czyli zmianę jego wyglądu bez zmiany struktury HTML. Dzięki temu można dostosować wygląd strony do potrzeb użytkownika i projektu.</p>
+
+<p>Jedną z podstawowych właściwości jest font-family, która określa czcionkę tekstu, np. Arial, Verdana lub Times New Roman. Można również podać kilka czcionek jako zapasowe.</p>
+
+<p>Właściwość font-size odpowiada za rozmiar tekstu. Można ją ustawiać w pikselach (px), procentach (%) lub jednostkach względnych (em, rem).</p>
+
+<p>Text-align służy do wyrównania tekstu. Może ustawiać tekst do lewej (left), prawej (right), środka (center) lub do pełnego wyjustowania (justify).</p>
+
+<p>Text-decoration pozwala dodawać efekty do tekstu, takie jak podkreślenie (underline), przekreślenie (line-through) lub usunięcie dekoracji (none).</p>
+
+<p>Font-weight określa grubość tekstu, np. normal lub bold, co pozwala wyróżniać ważne fragmenty treści.</p>
+
+<p>Text-transform zmienia wielkość liter w tekście, np. na wielkie litery (uppercase), małe litery (lowercase) lub każde słowo z wielkiej litery (capitalize).</p>
+
+<p>Line-height ustawia wysokość linii, co wpływa na czytelność tekstu poprzez zwiększenie odstępów między liniami.</p>
+
+<p>Letter-spacing oraz word-spacing pozwalają kontrolować odstępy między literami i słowami, co może poprawić estetykę tekstu.</p>
+
+<p>Wszystkie te właściwości razem pozwalają w pełni kontrolować wygląd tekstu na stronie internetowej.</p>      </section>
+<section class="section-block">
+  <h2>Przykład</h2>
+
+  <style>
+    .text-demo {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .title-demo {
+      text-align: center;
+      text-decoration: underline;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .accent {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #1a5fb4;
+    }
+
+    .strike {
+      text-decoration: line-through;
+    }
+  </style>
+
+  <div class="example-box">
+    <h3 class="title-demo">Formatowanie tekstu CSS</h3>
+
+    <p class="text-demo">
+      To jest zwykły tekst stylowany CSS. <span class="accent">ważny fragment</span>
+      oraz <span class="strike">tekst usunięty</span>.
+    </p>
+
+    <p class="text-demo">
+      CSS pozwala zmieniać czcionkę, rozmiar tekstu, odstępy i wyrównanie.
+    </p>
+  </div>
+</section>
+<section class="section-block">
+  <input class="toggle-code" type="checkbox" id="show-code-text1">
+  <label class="code-toggle" for="show-code-text1">Pokaż kod</label>
+
+  <div class="code-block">
+    <pre><code>&lt;!-- HTML --&gt;
+
+&lt;h3 class=&quot;title-demo&quot;&gt;Formatowanie tekstu CSS&lt;/h3&gt;
+
+&lt;p class=&quot;text-demo&quot;&gt;
+  To jest zwykły tekst stylowany CSS.
+  &lt;span class=&quot;accent&quot;&gt;ważny fragment&lt;/span&gt;
+  oraz &lt;span class=&quot;strike&quot;&gt;tekst usunięty&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p class=&quot;text-demo&quot;&gt;
+  CSS pozwala zmieniać czcionkę, rozmiar tekstu, odstępy i wyrównanie.
+&lt;/p&gt;
+
+&lt;!-- CSS --&gt;
+
+&lt;style&gt;
+.text-demo {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.title-demo {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.accent {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #1a5fb4;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+&lt;/style&gt;</code></pre>
+  </div>
+</section>
+    </main>
+  </div>
+</body>
+</html>
